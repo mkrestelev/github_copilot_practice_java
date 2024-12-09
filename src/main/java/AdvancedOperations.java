@@ -10,36 +10,43 @@ public class AdvancedOperations {
     // Method to find the maximum value in an array
     public int findMax(int[] arr) {
         // Method implementation removed
+        throw new UnsupportedOperationException("Method not implemented");
     }
 
     // Method to reverse a string
     public String reverseString(String str) {
         // Method implementation removed
+        throw new UnsupportedOperationException("Method not implemented");
     }
 
     // Method to format a date as 'YYYY-MM-DD'
     public String formatDate(LocalDate date) {
         // Method implementation removed
+        throw new UnsupportedOperationException("Method not implemented");
     }
 
     // Method to calculate the factorial of a number
     public int factorial(int n) {
         // Method implementation removed
+        throw new UnsupportedOperationException("Method not implemented");
     }
 
     // Method to find the nth Fibonacci number
     public int fibonacci(int n) {
         // Method implementation removed
+        throw new UnsupportedOperationException("Method not implemented");
     }
 
     // Method to check if a string is a palindrome
     public boolean isPalindrome(String str) {
         // Method implementation removed
+        throw new UnsupportedOperationException("Method not implemented");
     }
 
     // Method to merge and sort two arrays
     public int[] mergeAndSort(int[] arr1, int[] arr2) {
         // Method implementation removed
+        throw new UnsupportedOperationException("Method not implemented");
     }
 
     /**
