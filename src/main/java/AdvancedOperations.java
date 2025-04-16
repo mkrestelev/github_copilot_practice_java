@@ -113,7 +113,7 @@ public class AdvancedOperations {
      */
     public Map<String, Object> calculateStatistics(int[] nums) {
         Map<String, Object> stats = new HashMap<>();
-        if (nums.length == 0) {
+        if (nums == null || nums.length == 0) {
             stats.put("sum", 0);
             stats.put("average", Double.NaN);
             stats.put("min", null);
@@ -121,18 +121,15 @@ public class AdvancedOperations {
             return stats;
         }
 
-        int sum = 0;
-        int min = nums[0];
-        int max = nums[0];
+        int sum = 0, min = Integer.MAX_VALUE, max = Integer.MIN_VALUE;
         for (int num : nums) {
             sum += num;
-            if (num < min) min = num;
-            if (num > max) max = num;
+            min = Math.min(min, num);
+            max = Math.max(max, num);
         }
-        double average = (double) sum / nums.length;
 
         stats.put("sum", sum);
-        stats.put("average", average);
+        stats.put("average", (double) sum / nums.length);
         stats.put("min", min);
         stats.put("max", max);
         return stats;
