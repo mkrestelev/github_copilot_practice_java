@@ -7,46 +7,103 @@ public class AdvancedOperations {
         // Constructor code if needed
     }
 
-    // Method to find the maximum value in an array
+    /**
+     * Finds the maximum value in an array.
+     * @param arr - The array of integers.
+     * @return The maximum value in the array.
+     * @throws IllegalArgumentException if the array is null or empty.
+     */
     public int findMax(int[] arr) {
-        // Method implementation removed
-        throw new UnsupportedOperationException("Method not implemented");
+        if (arr == null || arr.length == 0) {
+            throw new IllegalArgumentException("Array must not be null or empty");
+        }
+        int max = arr[0];
+        for (int num : arr) {
+            if (num > max) {
+                max = num;
+            }
+        }
+        return max;
     }
 
-    // Method to reverse a string
+    /**
+     * Reverses a given string.
+     * @param str - The string to reverse.
+     * @return The reversed string.
+     * @throws IllegalArgumentException if the string is null.
+     */
     public String reverseString(String str) {
-        // Method implementation removed
-        throw new UnsupportedOperationException("Method not implemented");
+        if (str == null) {
+            throw new IllegalArgumentException("String must not be null");
+        }
+        return new StringBuilder(str).reverse().toString();
     }
 
-    // Method to format a date as 'YYYY-MM-DD'
+    /**
+     * Formats a LocalDate object as a string in 'YYYY-MM-DD' format.
+     * @param date - The date to format.
+     * @return The formatted date string.
+     * @throws IllegalArgumentException if the date is null.
+     */
     public String formatDate(LocalDate date) {
-        // Method implementation removed
-        throw new UnsupportedOperationException("Method not implemented");
+        if (date == null) {
+            throw new IllegalArgumentException("Date must not be null");
+        }
+        return date.toString();
     }
 
-    // Method to calculate the factorial of a number
+    /**
+     * Calculates the factorial of a number.
+     * @param n - The number to calculate the factorial for.
+     * @return The factorial of the number.
+     * @throws IllegalArgumentException if the number is negative.
+     */
     public int factorial(int n) {
-        // Method implementation removed
-        throw new UnsupportedOperationException("Method not implemented");
+        if (n < 0) {
+            throw new IllegalArgumentException("Number must not be negative");
+        }
+        int result = 1;
+        for (int i = 1; i <= n; i++) {
+            result *= i;
+        }
+        return result;
     }
 
     // Method to find the nth Fibonacci number
     public int fibonacci(int n) {
-        // Method implementation removed
-        throw new UnsupportedOperationException("Method not implemented");
+        if (n < 0) {
+            throw new IllegalArgumentException("Index must not be negative");
+        }
+        if (n == 0) return 0;
+        if (n == 1) return 1;
+        int a = 0, b = 1;
+        for (int i = 2; i <= n; i++) {
+            int temp = a + b;
+            a = b;
+            b = temp;
+        }
+        return b;
     }
 
     // Method to check if a string is a palindrome
     public boolean isPalindrome(String str) {
-        // Method implementation removed
-        throw new UnsupportedOperationException("Method not implemented");
+        if (str == null) {
+            throw new IllegalArgumentException("String must not be null");
+        }
+        String reversed = new StringBuilder(str).reverse().toString();
+        return str.equals(reversed);
     }
 
     // Method to merge and sort two arrays
     public int[] mergeAndSort(int[] arr1, int[] arr2) {
-        // Method implementation removed
-        throw new UnsupportedOperationException("Method not implemented");
+        if (arr1 == null || arr2 == null) {
+            throw new IllegalArgumentException("Arrays must not be null");
+        }
+        int[] merged = new int[arr1.length + arr2.length];
+        System.arraycopy(arr1, 0, merged, 0, arr1.length);
+        System.arraycopy(arr2, 0, merged, arr1.length, arr2.length);
+        java.util.Arrays.sort(merged);
+        return merged;
     }
 
     /**
