@@ -73,4 +73,39 @@ public class AdvancedOperationsTest {
         assertEquals(-5, result.get("min"));
         assertEquals(-1, result.get("max"));
     }
+
+    @Test
+    public void testFibonacci() {
+        assertEquals(0, advOps.fibonacci(0));
+        assertEquals(1, advOps.fibonacci(1));
+        assertEquals(1, advOps.fibonacci(2));
+        assertEquals(2, advOps.fibonacci(3));
+        assertEquals(3, advOps.fibonacci(4));
+        assertEquals(5, advOps.fibonacci(5));
+        assertEquals(21, advOps.fibonacci(8));
+    }
+
+    @Test
+    public void testIsPalindrome() {
+        assertTrue(advOps.isPalindrome("madam"));
+        assertTrue(advOps.isPalindrome("racecar"));
+        assertFalse(advOps.isPalindrome("hello"));
+        assertTrue(advOps.isPalindrome("a"));
+        assertTrue(advOps.isPalindrome(""));
+    }
+
+    @Test
+    public void testMergeAndSort() {
+        int[] result = advOps.mergeAndSort(new int[]{3, 1, 4}, new int[]{2, 5});
+        assertArrayEquals(new int[]{1, 2, 3, 4, 5}, result);
+
+        result = advOps.mergeAndSort(new int[]{}, new int[]{2, 1});
+        assertArrayEquals(new int[]{1, 2}, result);
+
+        result = advOps.mergeAndSort(new int[]{3, 3, 3}, new int[]{3, 3});
+        assertArrayEquals(new int[]{3, 3, 3, 3, 3}, result);
+
+        result = advOps.mergeAndSort(new int[]{}, new int[]{});
+        assertArrayEquals(new int[]{}, result);
+    }
 }
